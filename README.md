@@ -1,2 +1,2 @@
 # projects-service
-Microservice modelling my personal projects.
+Microservice written in ASP.NET Core that models my personal software engineering projects.
