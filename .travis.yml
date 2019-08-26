@@ -1,0 +1,36 @@
+---
+language: minimal
+
+branches:
+  only:
+    - master
+
+services:
+  - docker
+
+env:
+  global:
+    - CLOUDSDK_CORE_DISABLE_PROMPTS=1
+    - DOCKER_HUB_USERNAME=miketrout
+    - secure: VXsvjMSnYHdQPh3SHvVV6/VsXcQHoz/rBByhmHSJzvTSgFZRSMEaEzLwq2tf0qDWAuYgNq+RXHu2pwyLsWKyCN3X/X9++R6R8R5DcN8qQrgQ2GC1wkPcfyimdNLW92G8qAjIreyfFSHecOjP9nZYRA+AH69ND3FOO+bPFjSQGw+jDXNUzs7J4RmbvNi3KRYYrAI1dIue5TRloE2aTEgrBkRqbvTnMT5r+fCZBBLPVQsE53RrEVAZp2M6ziKSCWa2+/Fsum00kaya9Yf4LQOEFrtMoHcXGcZ/ocOdGFxKFm780gysYYN4AQGbfYNZ2CsozRpAQIOD2iZr4RS1uPA7ppss2Qzn1Qt/nLabNrWDYc6M6g9VEo1HbKKt2sP4DCmsJTkFTHUPTDCC4Cyep0979Tj66ezPCDY4DhqKRJZwStq78zhri6DWToucfb4749GViOg4aJKrVGWILShX5BV5LFn0pSygHUT6guf+RLkEVPfKkxbyEVxGge825+WeOFWOv9+6wmUgqd0OSrHXpZaCCtLzoXMnI2ATwgpu+jaQfq48fvQStDPnr3Fb84DLV5J0s6cVl8OwdzSzmstO7fS16jZnEFYLMIe+Dt1efQiT753R0Ifw9X3S2jJTSCHGuaCm8vfQU2bulrMt4PFU9KHKTfOf4ztZXnfsxBjnojSOIOo=
+
+addons:
+  apt:
+    packages:
+      - docker-ce
+
+before_install:
+  - openssl aes-256-cbc -K $encrypted_e6196a190a9e_key -iv $encrypted_e6196a190a9e_iv -in gcloud-service-account-secret.json.enc -out ../www.miketrout.dev/gcloud-service-account-secret.json -d
+
+script:
+  - docker --version
+  - docker build -t miketrout/projects-service .
+  - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_USERNAME" --password-stdin
+  - docker push miketrout/projects-service
+
+deploy:
+  provider: script
+  script: bash deploy.sh
+  skip_cleanup: true
+  on:
+    branch: master
