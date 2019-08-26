@@ -1,0 +1,46 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: projects-service-deployment
+  labels:
+    service: projects-service
+    tier: backend
+spec:
+  replicas: 3
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      service: projects-service
+      tier: backend
+  template:
+    metadata:
+      labels:
+        service: projects-service
+        tier: backend
+    spec:
+      containers:
+        - name: projects-service
+          image: miketrout/projects-service
+          imagePullPolicy: Always
+          livenessProbe:
+            httpGet:
+              path: /api/projects
+              port: 50001
+            initialDelaySeconds: 5
+            periodSeconds: 15
+          readinessProbe:
+            httpGet:
+              path: /api/projects
+              port: 50001
+            initialDelaySeconds: 5
+            periodSeconds: 15
+          resources:
+            requests:
+              memory: 100Mi
+              cpu: 100m
+            limits:
+              memory: 200Mi
+              cpu: 200m
+          ports:
+            - containerPort: 50001
