@@ -20,7 +20,7 @@ addons:
       - docker-ce
 
 before_install:
-  - openssl aes-256-cbc -K $encrypted_e6196a190a9e_key -iv $encrypted_e6196a190a9e_iv -in gcloud-service-account-secret.json.enc -out ../www.miketrout.dev/gcloud-service-account-secret.json -d
+  - openssl aes-256-cbc -K $encrypted_e6196a190a9e_key -iv $encrypted_e6196a190a9e_iv -in gcloud-service-account-secret.json.enc -out gcloud-service-account-secret.json -d
 
 script:
   - docker --version
