@@ -25,20 +25,27 @@ namespace ProjectsService
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IApplicationLifetime lifetime)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
 
-            app.UseHttpsRedirection();
             app.UseMvc();
+
+            lifetime.ApplicationStarted.Register(OnApplicationStarted);
+            lifetime.ApplicationStopping.Register(OnShutdown);
+        }
+
+        public void OnApplicationStarted()
+        {
+            System.Console.Out.WriteLine($"Projects service started.");
+        }
+
+        public void OnShutdown()
+        {
+            System.Console.Out.WriteLine($"Projects service shutting down.");
         }
     }
 }
