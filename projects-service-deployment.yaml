@@ -27,7 +27,7 @@ spec:
             httpGet:
               path: /api/projects
               port: 50001
-            initialDelaySeconds: 5
+            initialDelaySeconds: 10
             periodSeconds: 15
           readinessProbe:
             httpGet:
