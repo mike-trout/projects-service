@@ -25,14 +25,15 @@ namespace ProjectsService.Controllers
                     Id = 1,
                     Name = "www.miketrout.dev",
                     Description = 
-                        @"<p>>This site is written in plain HTML, CSS and JavaScript, deliberately
+                        @"<p>This site is written in plain HTML, CSS and JavaScript, deliberately
                         avoiding the use of frameworks. It is built into a container image,
                         using the Nginx Docker image as a base. The running container serves
                         the site using Nginx. The site is deployed as a Kubernetes deployment on
                         Google Kubernetes Engine and exposed as a service. A GKE ingress deals
                         with HTTPS, SSL termination and managed certificates from LetsEncrypt.
-                        The site repository is
-                        <a href=""https://github.com/mike-trout/www.miketrout.dev"">here</a>.
+                        The site is versioned on
+                        <a href=""https://github.com/mike-trout/www.miketrout.dev""
+                        target=""_blank"">GitHub</a>.
                         Pushes to master are built and deployed to GKE by Travis CI.</p>
                         <p>The Experience, Projects and Skills resources are retrieved from an
                         API hosted at
@@ -42,8 +43,9 @@ namespace ProjectsService.Controllers
                         to GKE and used as a simple API gateway. Ambassador was chosen because
                         of its simplicity and because it is Kubernetes native. The /experience,
                         /projects and /skills paths are routed to the backend experience, projects
-                        and skills microservices. The repository for the API gateway is
-                        <a href=""https://github.com/mike-trout/api.miketrout.dev>here</a>. This
+                        and skills microservices. The repository for the API gateway is also on
+                        <a href=""https://github.com/mike-trout/api.miketrout.dev
+                        target=""_blank"">GitHub</a>. This
                         repository is also automatically deployed by Travis CI.</p>"
                 });
                 _context.Projects.Add(new Project
