@@ -26,10 +26,11 @@ namespace ProjectsService.Controllers
                     Name = "www.miketrout.dev",
                     Description =
 @"<p>This site is written in plain HTML, CSS and JavaScript, deliberately avoiding the use of
-frameworks. It is built into a container image, using the Nginx Docker image as a base. The
-running container serves the site using Nginx. The site is deployed as a Kubernetes deployment on
-Google Kubernetes Engine and exposed as a service. A GKE Ingress deals with HTTPS, SSL termination
-and managed certificates from LetsEncrypt. The site is versioned on
+frameworks. The responsive layout is designed for both large and small screen resolutions. It is
+built into a container image, using the Nginx Docker image as a base. The running container serves
+the site using Nginx. The site is deployed as a Kubernetes deployment on Google Kubernetes Engine
+and exposed as a service. A GKE Ingress deals with HTTPS, SSL termination and managed certificates
+from LetsEncrypt. The site is versioned on
 <a href=""https://github.com/mike-trout/www.miketrout.dev"">GitHub</a>. Pushes to master are built
 and deployed to GKE by Travis CI.</p>
 
