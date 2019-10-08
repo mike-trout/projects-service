@@ -24,25 +24,27 @@ namespace ProjectsService.Controllers
                 {
                     Id = 1,
                     Name = "www.miketrout.dev",
-                    Description = @"This website!
-                        <br>
-                        The site is written in plain HTML, CSS and JavaScript, deliberately
+                    Description = 
+                        @"<p>>This site is written in plain HTML, CSS and JavaScript, deliberately
                         avoiding the use of frameworks. It is built into a container image,
                         using the Nginx Docker image as a base. The running container serves
                         the site using Nginx. The site is deployed as a Kubernetes deployment on
                         Google Kubernetes Engine and exposed as a service. A GKE ingress deals
                         with HTTPS, SSL termination and managed certificates from LetsEncrypt.
                         The site repository is
-                        <a href=""https://github.com/miketrout/www.miketrout.dev"">here</a>.
-                        Pushes to master are built and deployed to GKE by Travis CI.
-                        <br>
-                        The Experience, Projects and Skills resources are retrieved from an
+                        <a href=""https://github.com/mike-trout/www.miketrout.dev"">here</a>.
+                        Pushes to master are built and deployed to GKE by Travis CI.</p>
+                        <p>The Experience, Projects and Skills resources are retrieved from an
                         API hosted at
                         <a href=""https://api.miketrout.dev"">api.miketrout.dev</a>. The
                         loading times are deliberately exagerated to visually emphasise the
                         fact that they are being retrieved from an API. Ambassador is deployed
                         to GKE and used as a simple API gateway. Ambassador was chosen because
-                        of its simplicity and because it is Kubernetes native."
+                        of its simplicity and because it is Kubernetes native. The /experience,
+                        /projects and /skills paths are routed to the backend experience, projects
+                        and skills microservices. The repository for the API gateway is
+                        <a href=""https://github.com/mike-trout/api.miketrout.dev>here</a>. This
+                        repository is also automatically deployed by Travis CI.</p>"
                 });
                 _context.Projects.Add(new Project
                 {
