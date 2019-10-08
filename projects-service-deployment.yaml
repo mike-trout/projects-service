@@ -26,21 +26,22 @@ spec:
           livenessProbe:
             httpGet:
               path: /api/projects
-              port: 50001
+              port: http
             initialDelaySeconds: 10
             periodSeconds: 15
           readinessProbe:
             httpGet:
               path: /api/projects
-              port: 50001
-            initialDelaySeconds: 5
+              port: http
+            initialDelaySeconds: 10
             periodSeconds: 15
           resources:
             requests:
               memory: 100Mi
-              cpu: 100m
+              cpu: 50m
             limits:
               memory: 200Mi
-              cpu: 200m
+              cpu: 100m
           ports:
-            - containerPort: 50001
+            - name: http
+              containerPort: 50001
