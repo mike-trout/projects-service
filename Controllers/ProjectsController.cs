@@ -20,8 +20,18 @@ namespace ProjectsService.Controllers
             if (_context.Projects.Count() == 0)
             {
                 // Create a new Project if the collection is empty.
-                _context.Projects.Add(new Project { Name = "www.miketrout.dev", Description = "This website! It is hosted on GKE." });
-                _context.Projects.Add(new Project { Name = "Software AG Natural Microservice PoC", Description = "A proof-of-concept for a Software AG Natural and Adabas microservice." });
+                _context.Projects.Add(new Project
+                {
+                    Id = 1,
+                    Name = "www.miketrout.dev",
+                    Description = "This website! It is hosted on GKE."
+                });
+                _context.Projects.Add(new Project
+                {
+                    Id = 2,
+                    Name = "Software AG Natural Microservice PoC",
+                    Description = "A proof-of-concept for a Software AG Natural and Adabas microservice."
+                });
                 _context.SaveChanges();
             }
         }
