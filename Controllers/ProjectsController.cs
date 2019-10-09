@@ -29,15 +29,16 @@ namespace ProjectsService.Controllers
 frameworks. The responsive layout is designed for both large and small screen resolutions. It is
 built into a container image, using the Nginx Docker image as a base. The running container serves
 the site using Nginx. The site is deployed as a Kubernetes deployment on Google Kubernetes Engine
-and exposed as a service. A GKE Ingress deals with HTTPS, SSL termination and managed certificates
-from LetsEncrypt. The site is versioned on
+and exposed as a service. A GKE ingress deals with HTTPS, TLS termination and managed certificates
+from Let's Encrypt. The site is versioned on
 <a href=""https://github.com/mike-trout/www.miketrout.dev"">GitHub</a>. Pushes to master are built
 and deployed to GKE by Travis CI.</p>
 
 <p>The Experience, Projects and Skills resources are retrieved from an API hosted at
 <a href=""https://api.miketrout.dev"">https://api.miketrout.dev</a>. The loading times are
 deliberately exaggerated in JavaScript and CSS to visually emphasise the fact that they are being
-retrieved from an API. Ambassador is deployed to GKE and used as a simple API gateway. Ambassador
+retrieved from an API. <a href=""https://www.getambassador.io"">Ambassador</a> is deployed to GKE
+and used as a simple API gateway, exposed by a GKE ingress with managed certificates. Ambassador
 was chosen because of its simplicity and because it is Kubernetes native. The
 <a href=""https://api.miketrout.dev/experience"">/experience</a>,
 <a href=""https://api.miketrout.dev/projects"">/projects</a> and
