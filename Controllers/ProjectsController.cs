@@ -65,10 +65,12 @@ for the amount of traffic that this site receives. But that's kind of the point!
                     Id = 2,
                     Name = "Software AG Natural Microservice PoC",
                     Description =
-@"<p>This project is a proof-of-concept to demonstrate that business logic tied up in legacy Software
-AG Natural code can be exposed as containerised microservices deployed to Kubernetes. It consists
-of two parts: the backend microservice that runs Natural code accessing a containerised Software AG
-Adabas database; and a frontend React UI.</p>"
+@"<p>This project is a proof-of-concept to demonstrate that business logic tied up in legacy
+Software AG Natural code can be exposed as containerised microservices deployed to Kubernetes.
+It consists of two parts: the
+<a href=""https://github.com/mike-trout/employees-service"">backend microservice</a> that runs
+Natural code accessing a containerised Software AG Adabas database; and a
+<a href=""https://github.com/mike-trout/employees-app"">frontend React UI</a>.</p>"
                 });
                 _context.SaveChanges();
             }
