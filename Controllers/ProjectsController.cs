@@ -24,13 +24,12 @@ namespace ProjectsService.Controllers
                 {
                     Id = 1,
                     Name = "www.miketrout.dev",
-                    Description =
-@"<p>This site is written in plain HTML, CSS and JavaScript, deliberately avoiding the use of
-frameworks. The responsive layout is designed for both large and small screen resolutions. It is
-built into a container image, using the Nginx Docker image as a base. The running container serves
-the site using Nginx. The site is deployed as a Kubernetes deployment on Google Kubernetes Engine
-and exposed as a service. A GKE ingress deals with HTTPS, TLS termination and managed certificates
-from Let's Encrypt. The site is versioned on
+                    Description = @"<p>This site is written in plain HTML, CSS and JavaScript,
+deliberately avoiding the use of frameworks. The responsive layout is designed for both large and
+small screen resolutions. It is built into a container image, using the Nginx Docker image as a
+base. The running container serves the site using Nginx. The site is deployed as a Kubernetes
+deployment on Google Kubernetes Engine and exposed as a service. A GKE ingress deals with HTTPS,
+TLS termination and managed certificates from Let's Encrypt. The site is versioned on
 <a href=""https://github.com/mike-trout/www.miketrout.dev""
 rel=""noopener noreferrer"" target=""_blank"">GitHub</a>. Pushes to master are built
 and deployed to GKE by Travis CI.</p>
@@ -67,20 +66,19 @@ is written in Go and runs as a single binary. All the services are containerised
 Kubernetes deployments to GKE. NodePort services exposes them to the Ambassador resource mappings.
 Travis CI pipelines automate the build, test and deploy processes.</p>
 
-<p>Of course, the highly available, horizontally scalable architecture is massively overengineered
-for the amount of traffic that this site receives. But that's kind of the point!</p>"
+<p>Of course, the highly available, horizontally scalable architecture is massively over
+engineered for the amount of traffic that this site receives. But that's kind of the point!</p>"
                 });
                 _context.Projects.Add(new Project
                 {
                     Id = 2,
                     Name = "Software AG Natural Microservice PoC",
-                    Description =
-@"<p>This project is a proof-of-concept to demonstrate that business logic tied up in legacy
-Software AG Natural code can be exposed as containerised microservices deployed to Kubernetes.
-It consists of two parts: the
+                    Description = @"<p>This project is a proof-of-concept to demonstrate that
+business logic tied up in legacy Software AG Natural code can be exposed as containerised
+microservices deployed to Kubernetes. It consists of two parts: the
 <a href=""https://github.com/mike-trout/employees-service""
-rel=""noopener noreferrer"" target=""_blank"">backend microservice</a> that runs
-Natural code accessing a containerised Software AG Adabas database; and a
+rel=""noopener noreferrer"" target=""_blank"">backend microservice</a> that runs Natural code
+accessing a containerised Software AG Adabas database; and a
 <a href=""https://github.com/mike-trout/employees-app""
 rel=""noopener noreferrer"" target=""_blank"">frontend React UI</a>.</p>
 
