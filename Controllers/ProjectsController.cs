@@ -43,12 +43,12 @@ retrieved from an API. <a href=""https://www.getambassador.io""
 rel=""noopener noreferrer"" target=""_blank"">Ambassador</a> is deployed to GKE
 and used as a simple API gateway, exposed by a GKE ingress with managed certificates. Ambassador
 was chosen because of its simplicity and because it is Kubernetes native. The
-<a href=""https://api.miketrout.dev/experience""
-rel=""noopener noreferrer"" target=""_blank"">/experience</a>,
-<a href=""https://api.miketrout.dev/projects""
-rel=""noopener noreferrer"" target=""_blank"">/projects</a> and
-<a href=""https://api.miketrout.dev/skills""
-rel=""noopener noreferrer"" target=""_blank"">/skills</a> paths are routed to the backend
+<a href=""https://api.miketrout.dev/experience/""
+rel=""noopener noreferrer"" target=""_blank"">/experience/</a>,
+<a href=""https://api.miketrout.dev/projects/""
+rel=""noopener noreferrer"" target=""_blank"">/projects/</a> and
+<a href=""https://api.miketrout.dev/skills/""
+rel=""noopener noreferrer"" target=""_blank"">/skills/</a> paths are routed to the backend
 experience, projects and skills microservices. The repository for the API gateway is also on
 <a href=""https://github.com/mike-trout/api.miketrout.dev""
 rel=""noopener noreferrer"" target=""_blank"">GitHub</a> and also automatically
@@ -87,8 +87,9 @@ rel=""noopener noreferrer"" target=""_blank"">frontend React UI</a>.</p>
 <p>The backend service and frontend UI are deployed to GKE and exposed by the same GKE ingress
 used by www.miketrout.dev by specifying additional forwarding rules. The application URL is
 <a href=""https://www.miketrout.dev/employees-app""
-rel=""noopener noreferrer"" target=""_blank"">www.miketrout.dev/employees-app</a>. As it is
-only intended as a proof of concept, don't expect a responsive layout and do expect some bugs!</p>"
+rel=""noopener noreferrer"" target=""_blank"">https://www.miketrout.dev/employees-app</a>. As it
+is only intended as a proof of concept, don't expect a responsive layout and do expect some bugs!
+</p>"
                 });
                 _context.SaveChanges();
             }
