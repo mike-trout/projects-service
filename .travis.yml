@@ -24,8 +24,8 @@ before_install:
 
 script:
   - docker --version
-  - docker build -t miketrout/projects-service .
   - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_USERNAME" --password-stdin
+  - docker build -t miketrout/projects-service .
   - docker push miketrout/projects-service
 
 deploy:
