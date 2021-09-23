@@ -63,7 +63,7 @@ that returns this text is written in C# and uses the ASP.NET Core framework. The
 <a href=""https://github.com/mike-trout/skills-service""
 rel=""noopener noreferrer"" target=""_blank"">skills microservice</a>
 is written in Go and runs as a single binary. All the services are containerised and deployed as
-Kubernetes deployments to GKE. NodePort services exposes them to the Ambassador resource mappings.
+Kubernetes deployments to GKE. NodePort services expose them to the Ambassador resource mappings.
 Travis CI pipelines automate the build, test and deploy processes.</p>
 
 <p>Of course, the highly available, horizontally scalable architecture is massively over
